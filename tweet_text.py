@@ -16,10 +16,9 @@ def reply(tweet):
             berlin_time = datetime.now(timezone('Europe/Berlin'))
             date = berlin_time.strftime("It is %H:%M:%S on a %A (%d-%m-%Y).")
             return "Hi @" + user + "! " + date
-    if "1+1" in message.lower():
-        return "2"
-
-    return None
+    arguments = message.split('+')
+    summe = int(arguments[0]) + int(arguments[1])
+    return str(summe)
 
 def idle_text():
     """Return text that is tweeted when not replying"""

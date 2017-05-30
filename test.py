@@ -24,5 +24,9 @@ class TestTweetText(unittest.TestCase):
         response = reply({'text': 'Which Pokemon is #1', 'user': {'screen_name': 'TestUser'}})
         self.assertTrue("Bulbasaur" in response)
 
+    def test_rechnen(self):
+        response = reply({'text': '1+3', 'user': {'screen_name': 'TestUser'}})
+        self.assertTrue("4" in response)
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)
